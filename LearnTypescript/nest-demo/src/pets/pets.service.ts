@@ -18,7 +18,8 @@ export class PetsService {
         return this.petsRepository.find(); //SELECT * pet
     }
 
+    
     findOne(id: number): Promise<Pet>{
-        return this.petsRepository.findOneOrFail(id as number);
+        return this.petsRepository.findOneOrFail({ where: {id: id}});
     }
 }

@@ -17,7 +17,7 @@ export class OwnersResolver {
   findAll() {
     return this.ownersService.findAll();
   }
-
+  
   @Query(() => Owner, { name: 'owner' })
   findOne(@Args('id', { type: () => Int }) id: number) {
     return this.ownersService.findOne(id);
